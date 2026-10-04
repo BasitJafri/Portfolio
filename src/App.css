@@ -1,0 +1,23 @@
+.app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--color-bg-editor);
+}
+
+.app__workspace {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  min-height: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Mobile overlay backdrop */
+@media (max-width: 640px) {
+  .app__workspace {
+    overflow: visible;
+  }
+}

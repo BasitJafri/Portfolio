@@ -1,0 +1,103 @@
+.editor-tabs {
+  display: flex;
+  flex-direction: row;
+  background: var(--color-bg-sidebar);
+  border-bottom: 1px solid var(--color-border);
+  overflow-x: auto;
+  overflow-y: hidden;
+  flex-shrink: 0;
+  height: 35px;
+  scrollbar-width: thin;
+}
+
+.editor-tabs::-webkit-scrollbar {
+  height: 3px;
+}
+
+.editor-tabs__tab {
+  display: flex;
+  align-items: center;
+  height: 35px;
+  border-right: 1px solid var(--color-border);
+  flex-shrink: 0;
+  background: var(--color-bg-tab-inactive);
+  transition: background var(--transition);
+  position: relative;
+}
+
+.editor-tabs__tab--active {
+  background: var(--color-bg-tab-active);
+  border-top: 1px solid var(--color-border-focus);
+}
+
+.editor-tabs__tab:hover {
+  background: var(--color-bg-highlight);
+}
+
+.editor-tabs__tab--active:hover {
+  background: var(--color-bg-tab-active);
+}
+
+.editor-tabs__tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0 8px 0 12px;
+  height: 100%;
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  white-space: nowrap;
+  max-width: 180px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.editor-tabs__tab--active .editor-tabs__tab-btn {
+  color: var(--color-text-primary);
+}
+
+.editor-tabs__tab-btn:hover {
+  color: var(--color-text-primary);
+}
+
+.editor-tabs__tab-icon {
+  font-size: 11px;
+  flex-shrink: 0;
+}
+
+.editor-tabs__tab-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.editor-tabs__close {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  font-size: 16px;
+  line-height: 1;
+  border-radius: var(--radius-sm);
+  margin-right: 4px;
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity var(--transition), background var(--transition), color var(--transition);
+}
+
+.editor-tabs__tab:hover .editor-tabs__close,
+.editor-tabs__tab--active .editor-tabs__close {
+  opacity: 1;
+}
+
+.editor-tabs__close:hover {
+  background: rgba(255,255,255,0.1);
+  color: var(--color-text-primary);
+}

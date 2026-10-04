@@ -1,0 +1,150 @@
+.explorer {
+  width: var(--size-sidebar);
+  background: var(--color-bg-sidebar);
+  border-right: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  user-select: none;
+}
+
+.explorer--hidden {
+  width: 0;
+  overflow: hidden;
+}
+
+/* Header */
+.explorer__header {
+  padding: 10px 12px 6px;
+  flex-shrink: 0;
+}
+
+.explorer__title {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--color-text-secondary);
+  text-transform: uppercase;
+}
+
+/* Section (collapsible project root) */
+.explorer__section {
+  flex: 1;
+}
+
+.explorer__section-row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  background: none;
+  border: none;
+  color: var(--color-text-secondary);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-align: left;
+  font-family: var(--font-ui);
+}
+
+.explorer__section-label {
+  flex: 1;
+}
+
+/* Tree list */
+.explorer__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Shared row styles */
+.explorer__row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 22px;
+  background: none;
+  border: none;
+  color: var(--color-text-primary);
+  font-family: var(--font-ui);
+  font-size: 13px;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  gap: 4px;
+  transition: background var(--transition);
+}
+
+.explorer__row:hover {
+  background: var(--color-bg-hover);
+}
+
+/* Directory row */
+.explorer__dir {
+  color: var(--color-text-primary);
+  font-weight: 400;
+}
+
+/* File row */
+.explorer__file--active {
+  background: var(--color-bg-selected) !important;
+}
+
+.explorer__file--open .explorer__label {
+  font-style: italic;
+}
+
+/* Chevron */
+.explorer__chevron {
+  width: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-text-secondary);
+}
+
+.explorer__chevron-icon {
+  display: block;
+}
+
+/* Icon */
+.explorer__icon {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Label */
+.explorer__label {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .explorer {
+    position: absolute;
+    top: 0;
+    left: var(--size-activitybar);
+    bottom: 0;
+    z-index: 100;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.4);
+    width: 200px;
+  }
+  .explorer--hidden {
+    width: 0;
+    overflow: hidden;
+    left: calc(var(--size-activitybar) - 200px);
+  }
+}

@@ -1,0 +1,124 @@
+/* ==========================================================
+   VS Code-Inspired Portfolio – Global Styles
+   ========================================================== */
+
+/* ---------- CSS custom properties (VS Code dark theme) ---------- */
+:root {
+  --color-bg-editor:       #1e1e1e;
+  --color-bg-sidebar:      #252526;
+  --color-bg-activitybar:  #333333;
+  --color-bg-tab-active:   #1e1e1e;
+  --color-bg-tab-inactive: #2d2d2d;
+  --color-bg-terminal:     #1e1e1e;
+  --color-bg-statusbar:    #007acc;
+  --color-bg-highlight:    #2a2d2e;
+  --color-bg-hover:        #2a2d2e;
+  --color-bg-selected:     #094771;
+
+  --color-text-primary:    #cccccc;
+  --color-text-secondary:  #858585;
+  --color-text-muted:      #6a6a6a;
+  --color-text-accent:     #4ec9b0;
+  --color-text-keyword:    #569cd6;
+  --color-text-string:     #ce9178;
+  --color-text-comment:    #6a9955;
+  --color-text-heading:    #e8e8e8;
+  --color-text-link:       #4fc1ff;
+
+  --color-border:          #3c3c3c;
+  --color-border-focus:    #007acc;
+  --color-terminal-green:  #4ec9b0;
+  --color-terminal-red:    #f48771;
+  --color-terminal-yellow: #dcdcaa;
+  --color-terminal-prompt: #569cd6;
+
+  --font-mono: 'Cascadia Code', 'Fira Code', 'Consolas', 'Courier New', monospace;
+  --font-ui:   -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  --size-activitybar: 48px;
+  --size-sidebar:     240px;
+  --size-statusbar:   22px;
+  --size-terminal:    220px;
+
+  --radius-sm: 3px;
+  --transition: 150ms ease;
+}
+
+/* ---------- Reset ---------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  font-size: 13px;
+}
+
+body {
+  height: 100%;
+  background: var(--color-bg-editor);
+  color: var(--color-text-primary);
+  font-family: var(--font-ui);
+  line-height: 1.5;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Focus visible (accessibility) ---------- */
+:focus-visible {
+  outline: 1px solid var(--color-border-focus);
+  outline-offset: -1px;
+}
+
+button, [role="button"], [tabindex] {
+  cursor: pointer;
+}
+
+a {
+  color: var(--color-text-link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ---------- Scrollbars ---------- */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #424242;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555555;
+}
+
+/* ---------- Selection ---------- */
+::selection {
+  background: rgba(0, 122, 204, 0.4);
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
