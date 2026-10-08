@@ -19,7 +19,7 @@ interface TerminalProps {
   onToggle: () => void;
 }
 
-const CV_PATH = '/resume/cv.pdf';
+const CV_PATH = '/resume/Abdul-Basit-Jafri.pdf';
 
 function triggerCvDownload(): void {
   const a = document.createElement('a');
